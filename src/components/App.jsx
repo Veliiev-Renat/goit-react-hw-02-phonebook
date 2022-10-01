@@ -39,7 +39,19 @@ handleSubmit = e =>{
     number:''
   })
 }
+componentDidMount(){
+  const contact =localStorage.getItem('contacts')
+  const contactParce = JSON.parse(contact)
+  if(contactParce){
+    this.setState({contacts:contactParce})
+  }
+}
 
+componentDidUpdate(prevState){
+if(prevState.contacts!==this.state.contacts){
+  localStorage.setItem('contacts',JSON.stringify(this.state.contacts))
+}
+}
 
 seartchFilter=e=>{
   e.preventDefault()
