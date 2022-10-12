@@ -18,6 +18,5 @@ export default class Filter extends Component{
 }
 
 Filter.propTypes = {
-    filterSubmit:PropTypes.func,
     seartch:PropTypes.func
 }
